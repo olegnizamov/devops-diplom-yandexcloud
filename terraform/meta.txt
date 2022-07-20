@@ -1,0 +1,9 @@
+#cloud-config
+users:
+  - name: olegnizamov
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDlAWle5iLia1jAt1mCc0qGm5PSpuqMCNhG+nPVw/2UKbGxvg7mkz2grUEIhnGC5eTKaVM0nwSv8ZqT1To05zRm0jEjqfs0XYayjvmV49V+tGs5qfH/Kq0+w9J61RFeAsBVr1aQPBdJ246kWWPJlmt2w9gnx4MKvi00CHggmJeYL9aTOklzkkOv9xiLoiEZCmbehGRQNhuoNpEEoji9aXwUVSb888azVsyhqVJ5dvo/FyaaGWUI/9OmWMxhSoKhNw3sYNLnOAdbvFOYTRaJnhniuQSosDTxZ2v78DL4IaKahrYcHXMAV9fjkdjOZAQE8gOvK6CFT0xmiZLzqQC7tq3fD1DPT9b24l7/ZOrvsJaf2vQrdL2NQH6c8c8S76Yl2BEdMCot1zg3fxhzbnMOGG8IzxLSeVMJ4n/3IEFiGBCclDEYaDjWv4sWUDyAsCNbCt6vHKy4zTKT9DZ9PCubclwRdLaEs+rO4ybjiAzM/6rzMw86of5Mi7J60vUB42tcNEs= olegnizamov@olegnizamov
+

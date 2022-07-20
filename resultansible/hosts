@@ -1,0 +1,36 @@
+[nginx]
+bitrixdemo24.ru  letsencrypt_email=ol.nizamov@yandex.ru domain_name=bitrixdemo24.ru
+
+[mysql]
+db01.bitrixdemo24.ru mysql_server_id=1 mysql_replication_role=master
+db02.bitrixdemo24.ru mysql_server_id=2 mysql_replication_role=slave
+
+[app]
+app.bitrixdemo24.ru
+
+[gitlab]
+gitlab.bitrixdemo24.ru
+
+[runner]
+runner.bitrixdemo24.ru
+
+[monitoring]
+monitoring.bitrixdemo24.ru
+
+[proxy]
+bitrixdemo24.ru
+
+[mysql:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q olegnizamov@bitrixdemo24.ru"'
+
+[app:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q olegnizamov@bitrixdemo24.ru"'
+
+[monitoring:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q olegnizamov@bitrixdemo24.ru"'
+
+[gitlab:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q olegnizamov@bitrixdemo24.ru"'
+
+[runner:vars]
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q olegnizamov@bitrixdemo24.ru"'

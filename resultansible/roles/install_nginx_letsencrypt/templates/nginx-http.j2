@@ -1,0 +1,68 @@
+server_tokens off;
+
+server {
+    listen 80;
+    server_name {{ domain_name }};
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://{{ domain_name }}$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name gitlab.bitrixdemo24.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://gitlab.bitrixdemo24.ru$request_uri? permanent;
+    }
+}
+server {
+    listen 80;
+    server_name grafana.bitrixdemo24.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://grafana.bitrixdemo24.ru$request_uri? permanent;
+    }
+}
+server {
+    listen 80;
+    server_name prometheus.bitrixdemo24.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://prometheus.bitrixdemo24.ru$request_uri? permanent;
+    }
+}
+server {
+    listen 80;
+    server_name alertmanager.bitrixdemo24.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://alertmanager.bitrixdemo24.ru$request_uri? permanent;
+    }
+}
